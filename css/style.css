@@ -32,8 +32,7 @@
     padding: 10px 0;
     border-radius: 10px;
     box-shadow: 0 0 6px rgb(174, 180, 185);
-    display: flex;
-    justify-content: center;
+    margin: 45px;
   }
 
   .form{
@@ -48,7 +47,7 @@
 
   input, textarea{
     background: none;
-    color:aliceblue;
+    color: #0d4468;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
@@ -58,15 +57,13 @@
     resize: none;
   }
 
-  input:focus, textarea:focus{
+  input:focus,textarea:focus{
     outline:none;
     color: gray;
   }
 
   input:focus~label,
-  input:valid~label,
-  textarea:focus~label,
-  textarea:valid~label{
+  textarea:focus~label{
     position: absolute;
     top: -14px;
     font-size: 12px;
@@ -83,12 +80,62 @@
     pointer-events: none;
   }
 
-  .barra{
-    position:relative;
-    display:block;
+  input:focus~.barra::before,textarea:focus~.::before{
     width:100;
   }
 
-  input:focus~barra::before,text:focus~textarea::before{
-    width:100;
+  .barra{
+    position:relative;
+    display:block;
+    width:100%;
+  }
+
+  .barra::before{
+    content: '';
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, #136399, #0d4468);
+    transition: 0.3s ease all;
+    left: 0%;
+  }
+
+  button{
+    background-color: #2b9be6;
+    background: -webkit-linear-gradient(to right, #136399, #0d4468);
+    background: linear-gradient(to right, #136399, #0d4468);
+    display: block;
+    width: 100px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 10px auto;
+    cursor: pointer;
+  }
+
+  @media  and (max-width:1100px){
+    form{
+      width: 50%;
+    }
+  }
+
+  @media  and (max-width:600px){
+    form{
+      width: 60%;
+    }
+  }
+
+  @media  and (max-width:450px){
+    form{
+      width: 80%;
+    }
+  }
+
+  @media  and (max-width:300px){
+    form{
+      width:90%;
+    }
   }
